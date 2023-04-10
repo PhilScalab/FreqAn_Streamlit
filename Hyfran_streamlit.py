@@ -76,9 +76,12 @@ def download_link(document, filename):
     return f'<a href="data:application/vnd.openxmlformats-officedocument.wordprocessingml.document;base64,{file}" download="{filename}">Download Word document</a>'
 
 
-st.title('Frequency Analysis of Maximum Flow in Rivers')
+st.title('Analyse fréquentielle des débits de crues')
 
-uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
+st.text("Cet outil utilise des librairies 'open-source' afin de déterminer la meilleure distribution pour votre échantillon.")
+
+uploaded_file = st.file_uploader(
+    "Importer un fichier CSV d'une seule colonne qui comprend l'ensemble de l'échantillon.", type="csv")
 
 if uploaded_file is not None:
     data = pd.read_csv(uploaded_file, header=None, names=['flow'])
@@ -119,4 +122,4 @@ if uploaded_file is not None:
                 unsafe_allow_html=True)
 
 else:
-    st.info("Please upload a CSV file.")
+    st.info("Importer votre fichier CSV.")
