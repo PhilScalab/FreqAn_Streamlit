@@ -78,7 +78,7 @@ def download_link(document, filename):
 
 st.title('Analyse fréquentielle des débits de crues')
 
-st.text("Cet outil utilise des librairies 'open-source' afin de déterminer la meilleure distribution pour votre échantillon.")
+st.text("Cet outil sélectionne la meilleure distribution pour votre échantillon.")
 
 uploaded_file = st.file_uploader(
     "Importer un fichier CSV d'une seule colonne qui comprend l'ensemble de l'échantillon.", type="csv")
